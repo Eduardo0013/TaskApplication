@@ -1,8 +1,8 @@
-TaskApplication
+# TaskApplication
 
-Aplicación destinada a la gestión de tareas
+## Aplicación destinada a la gestión de tareas
 
-Technology Stack:
-Javascript Vanilla
-Vite
-CSS
+### Technology Stack:
+- Javascript Vanilla
+- Vite
+- CSS
