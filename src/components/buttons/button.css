@@ -1,0 +1,17 @@
+.button{
+    background-color: #2196f3;
+    border: none;
+    color: white; 
+    padding: 0.7rem;
+    border-radius: 0.4rem;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: #1e88e5;
+}
+.button--spacing{
+    letter-spacing: 0.1rem;
+}
+.button--uppercase{
+    text-transform: uppercase;
+}

@@ -1,0 +1,20 @@
+.barleft{    
+    border: 1px solid gainsboro;
+    border-top: none;
+    animation: fade-from-left 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: none;
+}
+.barleft__group{
+    padding: 1rem;
+    border: 1px solid gainsboro;
+    border-right: none;
+    display: flex;
+    border-top: none;
+}
+.barleft__link{
+    text-decoration: none;
+    color: black;
+}

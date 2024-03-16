@@ -1,0 +1,39 @@
+.rounded{
+    border-radius: 0.4rem;
+}
+.border-1{
+    border: 1px solid gainsboro;
+}
+.border-none{
+    border: none;
+}
+.border-top-none{
+    border-top: none;
+}
+.border-bottom-none{
+    border-bottom: none;
+}
+.border-left-none {
+    border-left: none;
+}
+.border-right-none {
+    border-right: none;
+}
+.h-screen{
+    height: 100vh;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.align-self-end{
+    align-self: end;
+}
+.justify-self-end{
+    justify-self: end;
+}
+.h-full{
+    height: 100%;
+}
+.w-full{
+    width: 100%;
+}

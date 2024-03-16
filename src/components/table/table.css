@@ -1,0 +1,17 @@
+.read-task{
+    border: 1px solid gainsboro;
+    border-collapse: collapse;
+    width: 100%;
+    overflow-y: scroll;
+    border-top: none;
+}
+.read-task thead th{
+    border: 1px solid gainsboro;
+    padding: 1rem;
+    border-top: none;
+}
+.read-task tbody tr td{
+    border: 1px solid gainsboro;
+    padding: 1rem;
+    border-top: none;
+}

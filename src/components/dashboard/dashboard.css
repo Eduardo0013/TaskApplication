@@ -1,0 +1,11 @@
+.dashboard{
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.dashboard__component{
+    display: flex;
+    align-items: start;
+    animation: fade-from-right 1s;
+}
