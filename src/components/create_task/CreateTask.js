@@ -8,7 +8,6 @@ const CreateTask = () => {
     const id = 'task-create'
     
     const insertTask = (event) => {
-        console.log(event.target)
         event.preventDefault()
 
         if(event.target.id === id){
@@ -55,7 +54,7 @@ const CreateTask = () => {
                 className: 'button button--uppercase button--spacing'
             })
     ].flat().join(''),
-        className:'form border-left-none w-full',
+        className:'form border-left-none w-full h-full border-none',
         id
     })
 }

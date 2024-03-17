@@ -1,20 +1,40 @@
 .barleft{    
-    border: 1px solid gainsboro;
-    border-top: none;
     animation: fade-from-left 1s;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border-bottom: none;
-}
-.barleft__group{
-    padding: 1rem;
     border: 1px solid gainsboro;
-    border-right: none;
-    display: flex;
+    border-bottom: none;
     border-top: none;
+    border-left: none;
+    justify-content: space-between;
 }
-.barleft__link{
-    text-decoration: none;
-    color: black;
+.barleft__button{
+    display: flex;
+    column-gap: 0.8rem;
+    align-items: center;
+    background-color: transparent;
+    padding: 1.25rem 0.5rem;
+    border-bottom: 1px solid gainsboro;
+    font-size: 1rem;
+    font-weight:lighter;
+}
+.barleft__userbutton{
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
+}
+.barleft__button:hover{
+    cursor: pointer;
+    background-color: #2196f3;
+    color: white;
+}
+.barleft__poweroff{
+    padding: 0 0.5rem;
+    transition: transform 0.5s;
+}
+.barleft__poweroff:hover{
+    transform: scale(1.2);
+}
+.barleft__poweroff:hover i{
+    color: white;
 }

@@ -6,7 +6,6 @@ export const changeComponentIntoDashboard = (component) => {
     $dashboardComponent.innerHTML = component
 }
 const Dashboard = (children) => {
-
     return `
     <div class="dashboard">
         ${BarLeft()}

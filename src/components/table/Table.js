@@ -1,20 +1,15 @@
 import './table.css'
 
-const Table = (headers,rows = null) => {    
-    console.log(rows)
+const Table = (headers,rows = null,className = 'read-task') => {    
     return `
-    <table class="read-task">
+    <table class="${className}">
         <thead>
-            ${headers !== null ? headers.map(header => `<th>${header}</th>`) : ''}
+            <tr>
+                ${headers}
+            </tr>
         </thead>
         <tbody>
-            ${rows !==null ? rows.map(row => {
-                return `<tr>
-                    <td>${row.name}</td>
-                    <td>${row.description}</td>
-                    <td>${row.date}</td>
-               </tr>`
-            }) :'' }
+            ${rows}
         </tbody>
     </table>`
 }

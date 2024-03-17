@@ -1,11 +1,10 @@
 import './barleft.css'
-import '../../../css/utilities.css'
 import '../../../css/colors.css'
+import App from '../../../app/App'
 import onClick from '../../hooks/onClick'
-import { changeComponentIntoDashboard } from '../dashboard/Dashboard'
+import {changeComponentIntoDashboard} from '../dashboard/Dashboard'
 import CreateTask from '../create_task/CreateTask'
 import TaskRead from '../task_read/TaskRead'
-import App from '../../../app/App'
 
 const BarLeft = () => {
     return `<div class="barleft">
@@ -13,52 +12,52 @@ const BarLeft = () => {
             ${Group({
                 label:'Crear Tarea',
                 icon: '<i class="fa-solid fa-pen-fancy"></i>',
-                to: '/task-create',
+                toComponent: CreateTask,
                 id: 'create-tasks'
             })}
             ${Group({
                 label:'Visualizar Tareas',
                 icon: '<i class="fa-solid fa-list"></i>',
-                to: '/task-read',
+                toComponent: TaskRead,
                 id: 'read-tasks'
             })}
         </div>
         <div class="barleft__user-items"> 
             ${UserGroup({
                 label: App.getUsername(),
-                icon: '<i class="fa-solid fa-user"></i>'
+                icon: '<i class="fa-solid fa-user"></i>',
+                id: ''
             })}
             
         </div>
     </div>`
 }
-const UserGroup = ({label,icon,id,to}) => {
+const UserGroup = ({label,icon,id,idLogoutButton,actionLogout}) => {
+    onClick(actionLogout,id)
     return `
-    <div class="barleft__group justify-content-between">
-        <a ${id ? "id="+id : ''} class="barleft__link" href="#" component=${to}>${icon +' '+label}</a>
-        <a><i class="fa-solid fa-power-off red"></i></a>
+    <div class="barleft__button justify-content-between border-bottom-none">
+        <div ${id} class="barleft__userbutton">
+            ${icon}${label}
+        </div>
+        <div ${idLogoutButton} class="barleft__poweroff">
+            <i class="fa-solid fa-power-off red"></i>
+        </div>
     </div>
     `
 }
-const Group = ({label = '',icon = '',to='',id = null} = null) =>{
+const Group = ({label = '',icon = '',toComponent=null,id = null} = null) =>{
     const redirectTo = (event) => {
-        event.preventDefault()
         if(event.target.id === id){
-            const components = {
-                '/task-create' : CreateTask(),
-                '/task-read': TaskRead()
-            }
-            const $group = event.target
-            let component = $group.attributes[3]
-            component = components[component.nodeValue]
-            changeComponentIntoDashboard(component)
+            console.log('ja')
+            changeComponentIntoDashboard(toComponent())
         }
     }
     onClick(redirectTo,id)
-    return `
-    <div class="barleft__group">
-        <a ${id ? "id="+id : ''} class="barleft__link" href="#" component=${to}>${icon +' '+label}</a>
-    </div>
-    `
+    return `<div
+    id="${id}"
+    class="barleft__button">
+        ${icon}
+        ${label}
+    </div>`
 }
 export default BarLeft

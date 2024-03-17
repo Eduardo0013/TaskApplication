@@ -1,4 +1,5 @@
 import Login from '../pages/login/Login'
+import Read from '../pages/read/Read'
 import Create from '../pages/create/Create'
 
 const routes = {
@@ -11,7 +12,7 @@ const routes = {
         },
         {
             path: '#/task',
-            component: Create()
+            component: Create(),
         }
     ]
 }
