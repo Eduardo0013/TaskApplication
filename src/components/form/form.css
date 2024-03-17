@@ -28,15 +28,13 @@
 }
 .form__label{
     text-transform: uppercase;
-    letter-spacing: 0.2rem;
     font-weight: lighter;
 }
 .form__control{
     border: none;
     padding: 0.7rem;
     flex-grow: 1;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
+    letter-spacing: 0.1rem;
 }
 .form__control:focus{
     outline: none;

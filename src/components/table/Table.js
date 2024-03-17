@@ -6,7 +6,7 @@ const Table = (headers,rows = null,className = 'read-task') => {
         <thead>
             <tr>
                 ${headers}
-            </tr>
+            </tr> 
         </thead>
         <tbody>
             ${rows}

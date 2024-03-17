@@ -22,3 +22,8 @@ App.loadJavascriptCode = () => {
         }
     })
 }
+
+App.reloadApp = () => {
+    App.loadEventsOnJavascript()
+    App.loadJavascriptCode()
+}

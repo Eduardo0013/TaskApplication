@@ -3,6 +3,7 @@ import './create_task.css'
 import '../../../css/utilities.css'
 import Button from '../buttons/Button'
 import onSubmit from '../../hooks/onSubmit'
+import Modal from '../modal/Modal'
 
 const CreateTask = () => {
     const id = 'task-create'
@@ -19,16 +20,15 @@ const CreateTask = () => {
                 tasks = JSON.parse(tasks)
                 tasks.push({name: taskName,description: taskDescription,date: taskDate})
                 localStorage.setItem('tasks',JSON.stringify(tasks))
-                console.log(localStorage.getItem('tasks'))
+                Modal.success('Tarea Guardada')
                 return
             }
             tasks = []
             tasks.push({name: taskName,description: taskDescription,date: taskDate})
             localStorage.setItem('tasks',JSON.stringify(tasks))
-            console.log(localStorage.getItem('tasks'))
+            Modal.success('Tarea Guardada')
         }
     }
-
     onSubmit(insertTask,id)
     return Form({
         childs:[

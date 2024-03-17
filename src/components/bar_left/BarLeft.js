@@ -26,9 +26,9 @@ const BarLeft = () => {
             ${UserGroup({
                 label: App.getUsername(),
                 icon: '<i class="fa-solid fa-user"></i>',
-                id: ''
+                id: 'user-button',
+                idLogoutButton: 'logout-button',
             })}
-            
         </div>
     </div>`
 }
@@ -48,7 +48,6 @@ const UserGroup = ({label,icon,id,idLogoutButton,actionLogout}) => {
 const Group = ({label = '',icon = '',toComponent=null,id = null} = null) =>{
     const redirectTo = (event) => {
         if(event.target.id === id){
-            console.log('ja')
             changeComponentIntoDashboard(toComponent())
         }
     }

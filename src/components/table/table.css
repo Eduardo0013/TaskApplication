@@ -2,13 +2,12 @@
     border: 1px solid gainsboro;
     border-collapse: collapse;
     width: 100%;
-    overflow-y: scroll;
-    max-height: 100%;
     border-top: none;
     border-left: none;
 }
 .read-task thead tr th{
     border: 1px solid gainsboro;
+    font-weight: 400;
     padding: 1rem;
     border-top: none;
     border-left: none;
@@ -17,4 +16,5 @@
     border: 1px solid gainsboro;
     padding: 1rem;
     border-top: none;
+    font-weight: 200;
 }

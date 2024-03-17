@@ -6,6 +6,8 @@
 }
 .dashboard__component{
     display: flex;
+    max-height: 100vh;
     align-items: start;
+    overflow-y: scroll;
     animation: fade-from-right 1s;
 }
