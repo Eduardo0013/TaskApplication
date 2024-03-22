@@ -7,6 +7,10 @@ import CreateTask from '../create_task/CreateTask'
 import TaskRead from '../task_read/TaskRead'
 
 const BarLeft = () => {
+    const actionLogout = () => {
+        App.destroySession()
+        App.goHome()
+    }
     return `<div class="barleft">
         <div class="barleft__items">
             ${Group({
@@ -28,19 +32,25 @@ const BarLeft = () => {
                 icon: '<i class="fa-solid fa-user"></i>',
                 id: 'user-button',
                 idLogoutButton: 'logout-button',
+                buttonLogoutAction: actionLogout
             })}
         </div>
     </div>`
 }
-const UserGroup = ({label,icon,id,idLogoutButton,actionLogout}) => {
-    onClick(actionLogout,id)
+const UserGroup = ({label,icon,id,idLogoutButton,buttonLogoutAction}) => {
+    onClick((event) => {
+        if(event.target.id === idLogoutButton){
+            buttonLogoutAction() 
+        }
+    },idLogoutButton)
+
     return `
     <div class="barleft__button justify-content-between border-bottom-none">
         <div ${id} class="barleft__userbutton">
             ${icon}${label}
         </div>
-        <div ${idLogoutButton} class="barleft__poweroff">
-            <i class="fa-solid fa-power-off red"></i>
+        <div class="barleft__poweroff">
+            <i ${idLogoutButton ? `id=${idLogoutButton}` : ''} class="fa-solid fa-right-from-bracket"></i>
         </div>
     </div>
     `

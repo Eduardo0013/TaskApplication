@@ -8,6 +8,7 @@ const Router = (PATH) => {
     if(!page){
         return routes.error;
     }
+    
     return page.component;
 }
 

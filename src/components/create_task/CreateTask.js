@@ -15,15 +15,9 @@ const CreateTask = () => {
             const taskName = document.getElementById('task-name').value
             const taskDescription = document.getElementById('task-description').value
             const taskDate = document.getElementById('task-date').value
-            let tasks
-            if((tasks = localStorage.getItem('tasks')) !== null){
-                tasks = JSON.parse(tasks)
-                tasks.push({name: taskName,description: taskDescription,date: taskDate})
-                localStorage.setItem('tasks',JSON.stringify(tasks))
-                Modal.success('Tarea Guardada')
-                return
-            }
-            tasks = []
+            let tasks = localStorage.getItem('tasks')
+            tasks ?? []
+            tasks = JSON.parse(tasks)
             tasks.push({name: taskName,description: taskDescription,date: taskDate})
             localStorage.setItem('tasks',JSON.stringify(tasks))
             Modal.success('Tarea Guardada')

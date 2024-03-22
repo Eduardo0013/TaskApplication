@@ -1,9 +1,19 @@
 export default function App(){}
 App.eventList = []
 App.codeQueue = []
+App.goHome = () => {
+    location.hash = ''
+    location.reload()
+}
 
 App.getUsername = () => {
     return sessionStorage.getItem('username')
+}
+App.destroySession= () => {
+    const userSessionExists = sessionStorage.getItem(App.getUsername())
+    if(userSessionExists){
+        sessionStorage.removeItem('username')
+    }
 }
 
 App.loadEventsOnJavascript = () => {

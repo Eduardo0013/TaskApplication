@@ -4,9 +4,9 @@ import './modal.css'
 import App from '../../../app/App'
 
 const SUCCESS_ICON = '<i class="fa-solid fa-circle-check"></i>'
-
 const Modal = () => {}
 Modal.id = 'modal'
+
 const createModalContainer = (modal) => {
     const modalContainer = document.createElement('div')
     modalContainer.classList.add('modal__container')
@@ -15,7 +15,7 @@ const createModalContainer = (modal) => {
     return modalContainer
 }
 
-const createModal = (message,icon,action) => {
+const createModal = (message,icon) => {
     const modal = document.createElement('form')
     modal.classList.add('modal')
     modal.id = Modal.id
@@ -31,19 +31,20 @@ const createModal = (message,icon,action) => {
 }
 Modal.show = (message,icon,action) => {
     const $root = document.getElementById('root')
-    const modal = createModal(message,icon)
+    let modal = createModal(message,icon)
     const modalContainer = createModalContainer(modal)
-    $root.appendChild(modalContainer)
-   
-    onSubmit(action,Modal.id)
-    App.reloadApp()
+    let modalExistsInHtml = document.getElementById(modalContainer.id)
+    if(!modalExistsInHtml){
+        $root.appendChild(modalContainer)
+        onSubmit(action,Modal.id)
+    }else{
+        modalExistsInHtml.classList.remove('modal--hidden')
+    }
 }
 Modal.close = (event) => {
-    event.preventDefault()
-    console.log(event)
     if(event.target.id === Modal.id){
         const $modalContainer = document.getElementById('modal-container')
-        $modalContainer.style.display = 'none'
+        $modalContainer.classList.add('modal--hidden')
     }
 }
 Modal.success = (message,action) => Modal.show(message,SUCCESS_ICON,action = Modal.close)

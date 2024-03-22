@@ -29,11 +29,13 @@
     color: white;
 }
 .barleft__poweroff{
+    transition: transform 0.2s;
+}
+.barleft__poweroff i{
     padding: 0 0.5rem;
-    transition: transform 0.5s;
 }
 .barleft__poweroff:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .barleft__poweroff:hover i{
     color: white;
