@@ -1,6 +1,7 @@
 import Login from '../pages/login/Login'
 import Create from '../pages/create/Create'
 import App from '../../app/App'
+import resolveWithoutRefresh from '../helpers/resolveWithoutRefresh'
 
 const routes = {
     error: '404 Not Found',
@@ -10,8 +11,7 @@ const routes = {
             component: Login(),
             beforeChargePage : () => {
                 if(!App.isGuest()){
-                    location.href = '#/task'
-                    location.reload()
+                    resolveWithoutRefresh('#/task')
                 }
             }
         },

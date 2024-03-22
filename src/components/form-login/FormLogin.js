@@ -2,7 +2,7 @@ import Form from "../form/Form"
 import Button from "../buttons/Button"
 import componentDidMount from '../../hooks/componentDidMount'
 import onSubmit from "../../hooks/onSubmit"
-import resolve from '../../helpers/resolve'
+import resolveWithoutRefresh from '../../helpers/resolveWithoutRefresh'
 import checkUser from '../../helpers/checkUser'
 
 const FormLogin = () => {
@@ -31,8 +31,7 @@ const FormLogin = () => {
                 return
             }
             sessionStorage.setItem('username',$username.value)
-            location.href = '#/task'
-            resolve()
+            resolveWithoutRefresh('#/task')
         }
     }
     componentDidMount(changeToLevitateAnimation,id)
