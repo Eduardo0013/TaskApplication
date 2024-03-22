@@ -8,7 +8,7 @@ import TaskRead from '../task_read/TaskRead'
 
 const BarLeft = () => {
     const actionLogout = () => {
-        App.destroySession()
+        App.destroySession();
         App.goHome()
     }
     return `<div class="barleft">

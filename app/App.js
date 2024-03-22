@@ -1,9 +1,10 @@
+import resolveWithoutRefresh from "../src/helpers/resolveWithoutRefresh"
+
 export default function App(){}
 App.eventList = []
 App.codeQueue = []
 App.goHome = () => {
-    location.hash = ''
-    location.reload()
+    resolveWithoutRefresh('/')
 }
 App.isGuest = () => {
     return !App.getUsername()
