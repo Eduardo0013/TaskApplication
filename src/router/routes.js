@@ -1,14 +1,19 @@
 import Login from '../pages/login/Login'
-import Read from '../pages/read/Read'
 import Create from '../pages/create/Create'
+import App from '../../app/App'
 
 const routes = {
-    default : Login(),
     error: '404 Not Found',
-    routes: [
+    routesList: [
         {
             path: '#/',
-            component: Login()
+            component: Login(),
+            beforeChargePage : () => {
+                if(!App.isGuest()){
+                    location.href = '#/task'
+                    location.reload()
+                }
+            }
         },
         {
             path: '#/task',
@@ -16,4 +21,5 @@ const routes = {
         }
     ]
 }
+routes.default = routes.routesList.find(e => e.path === '#/')
 export default routes

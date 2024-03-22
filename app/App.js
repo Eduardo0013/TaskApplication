@@ -5,13 +5,14 @@ App.goHome = () => {
     location.hash = ''
     location.reload()
 }
-
+App.isGuest = () => {
+    return !App.getUsername()
+}
 App.getUsername = () => {
     return sessionStorage.getItem('username')
 }
 App.destroySession= () => {
-    const userSessionExists = sessionStorage.getItem(App.getUsername())
-    if(userSessionExists){
+    if(!App.isGuest()){
         sessionStorage.removeItem('username')
     }
 }

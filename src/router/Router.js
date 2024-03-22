@@ -1,14 +1,17 @@
 import routes from "./routes"
 
 const Router = (PATH) => {
-    const page = routes.routes.find(e => e.path === PATH)
+    let page = routes.routesList.find(e => e.path === PATH)
+    
     if(PATH === '' || PATH === '/' || PATH === '#/'){
-        return routes.default
+        page = routes.default
     }
     if(!page){
         return routes.error;
     }
-    
+    if(page.beforeChargePage){
+        page.beforeChargePage()
+    }
     return page.component;
 }
 
